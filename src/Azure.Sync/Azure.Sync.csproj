@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Rocket.Surgery.Azure.Sync</RootNamespace>
+    <AssemblyName>Rocket.Surgery.Azure.Sync</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Operations\**" />
+    <EmbeddedResource Remove="Operations\**" />
+    <None Remove="Operations\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Rocket.Surgery.Build.Metadata" Version="3.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-18618-05" PrivateAssets="All" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Mobile.Client" Version="4.1.1" />
+    <PackageReference Include="Microsoft.Azure.Mobile.Client.SQLiteStore" Version="4.1.1" />
+    <PackageReference Include="Rocket.Surgery.Reactive.Extensions" Version="0.10.0" />
+    <PackageReference Include="Rocket.Surgery.Task.Extensions" Version="0.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Azure.Sync.Abstractions\Azure.Sync.Abstractions.csproj" />
+    <ProjectReference Include="..\Azure.Sync.Data\Azure.Sync.Data.csproj" />
+  </ItemGroup>
+</Project>

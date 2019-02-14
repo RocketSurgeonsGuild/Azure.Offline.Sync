@@ -1,0 +1,23 @@
+trigger:
+- main
+- dev
+- feature/*
+- release/*
+- preview/*
+
+pr:
+- main
+- release/*
+- preview/*
+
+pool:
+  vmImage: vs2017-win2016
+
+steps:
+- task: DotNetCoreInstaller@0
+  displayName: 'dotnet install'
+  inputs:
+    version: 2.2.101
+
+- powershell: .\build.ps1 --target AzureDevOps --verbosity normal
+  displayName: nuke build
